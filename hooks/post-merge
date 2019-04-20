@@ -1,2 +1,2 @@
 #!/bin/sh
-echo $(git branch | grep \* | cut -d ' ' -f2)" 0" >update
+echo $(git branch | grep \* | cut -d ' ' -f2)"\n0" >update
