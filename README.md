@@ -29,10 +29,14 @@ When start.sh is ran, it reads the file update, and if it is "0", then it applie
 
 ## MySQL Information
 Hostname - localhost
+
 Username - root
+
 Password - root
+
 Database - scotchbox
 
 ## Wordpress Settings
 Username - WebAdmin
+
 Password - gG5XCvUSL4keOwamsEz
