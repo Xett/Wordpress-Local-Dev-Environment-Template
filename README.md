@@ -1,10 +1,11 @@
 # Installation
 Run install.sh. This moves post-merge and pre-commit files to .git/hooks.
+
 post-merge automates updating the database after an update. The update file in the directory is used for checking purposes.
+
 pre-commit automatically updates all submodules and add their updates to the commit.
 
 # Usage
-
 Run start.sh to start and/or update the server.
 
 Run ssh.sh to ssh into the server.
