@@ -1,2 +1,2 @@
 #!/bin/sh
-echo $(git checkout) >update
+echo $(git branch | grep \* | cut -d ' ' -f2) >update
