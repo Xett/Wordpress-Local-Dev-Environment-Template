@@ -15,8 +15,6 @@ Run stop.sh to stop and dump the server if you choose.
 Run update_submodules.sh to update the submodules (database, themes, plugins). This doesn't automatically commit them.
 
 # How automation is implemented
-test
-
 The post-merge git hook shell script is ran after a pull is merged to the local repository. This shell script changes the file update to "0".
 
 The pre-commit git hook shell script is ran before commits are processed. This shell script automatically updates all submodules and add their updates to the commit.
