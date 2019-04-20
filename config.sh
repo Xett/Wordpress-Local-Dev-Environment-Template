@@ -1,9 +1,0 @@
-#!/bin/sh
-PROJECT_DIRECTORY=""
-MYSQL_DATABASE_NAME="scotchbox"
-MYSQL_USER="WebAdmin"
-MYSQL_PASSWORD="gG5XCvUSL4keOwamsEz"
-MYSQL_UPDATE=$PROJECT_DIRECTORY"./update"
-MYSQL_DUMP="/home/vagrant/mysql/mysql.sql"
-MYSQL_CREATE_USER=$PROJECT_DIRECTORY"mysql/create_user.sql"
-MYSQL_SSH_CREATE_USER="/home/vagrant/mysql/create_user.sql"
