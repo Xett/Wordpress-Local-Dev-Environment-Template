@@ -1,4 +1,6 @@
 #!/bin/sh
-git submodule init
-git submodule update
-git submodule foreach git pull origin master
+# Import variables
+SCRIPT=$(readlink -f "$0")
+PROJECT_DIRECTORY=$(dirname "$SCRIPT")
+. $PROJECT_DIRECTORY"/scripts/update_submodules.sh"
+update_submodules
