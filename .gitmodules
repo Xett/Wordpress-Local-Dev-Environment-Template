@@ -1,0 +1,3 @@
+[submodule "database/Wordpress-Database-Template"]
+	path = database/Wordpress-Database-Template
+	url = https://github.com/Xett/Wordpress-Database-Template
