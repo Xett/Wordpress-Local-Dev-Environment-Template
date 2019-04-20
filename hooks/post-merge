@@ -1,2 +1,2 @@
 #!/bin/sh
-echo $(git branch -vv) >update
+echo $(git checkout) >update
