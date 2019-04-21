@@ -33,7 +33,6 @@ run()
 }
 # ignore changes on these files
 git update-index --assume-unchanged $PROJECT_DIRECTORY"/hooks/post-merge"
-git update-index --assume-unchanged $PROJECT_DIRECTORY"/hooks/pre-commit"
 git update-index --assume-unchanged $PROJECT_DIRECTORY"/Vagrantfile"
 update_submodules
 # Create WebAdmin MYSQL user
