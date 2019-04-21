@@ -18,11 +18,7 @@ check()
 {
    if [ $BRANCH=='master' ]
    then
-      #we are on the master branch, so we check for the updates
-      if [ $AHEAD -gt 0 ]
-      then
-         echo "we are ahead of master and shouldn't update"
-      elif [ $BEHIND -gt 0 ]
+      if [ $BEHIND -gt 0 ]
       then
          git pull origin/$BRANCH
       fi
