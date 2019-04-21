@@ -19,7 +19,6 @@ COMMANDS[20]="sudo service apache2 start; echo \"Starting Apache Web Server\"; "
 . $PROJECT_DIRECTORY"/scripts/create_mysql_webadmin.sh"
 # Import set_update_commands function
 . $PROJECT_DIRECTORY"/scripts/update_commands.sh"
-. $PROJECT_DIRECTORY"/scripts/update_submodules.sh"
 # Run commands function
 run()
 {
@@ -31,10 +30,6 @@ run()
    RESULT=$(vagrant ssh -- -t $COMMAND )
    echo "$RESULT"
 }
-# ignore changes on these files
-git update-index --assume-unchanged $PROJECT_DIRECTORY"/hooks/post-merge"
-git update-index --assume-unchanged $PROJECT_DIRECTORY"/Vagrantfile"
-update_submodules
 # Create WebAdmin MYSQL user
 create_webadmin
 # Check if the database needs updating, and load commands to do it if so
