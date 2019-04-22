@@ -12,7 +12,7 @@ Run ssh.sh to ssh into the server.
 
 Run stop.sh to stop and dump the server if you choose.
 
-Run update_database.sh to update the database. If the database is ahead, nothing happens. If the branch isn't on master, it will be updated along that branch.
+Run update_database.sh to update the database; this must be while the server is running. If the database is ahead, nothing happens. If the branch isn't on master, it will be updated along that branch.
 
 # How automation is implemented
 The post-merge git hook shell script is ran after a pull is merged to the local repository. This shell script checks the branch, the number of commits ahead and the number of commits behind of the local database repository. If it is in the master branch and behind, it updates. If it is not in the master branch and is behind, it updates.
