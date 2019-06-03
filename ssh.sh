@@ -1,2 +1,1 @@
-#!/bin/sh
-vagrant ssh
+. "./scripts/core.sh" "ssh"
