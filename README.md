@@ -1,25 +1,50 @@
-# Installation
-Run install.sh. This moves post-merge and pre-commit files to .git/hooks.
+# Getting Started
 
-post-merge automates updating the database after an update. The update file in the directory is used for checking purposes.
+## Prerequisites
 
-pre-commit automatically updates all submodules and add their updates to the commit.
+- [VirtualBox](https://www.virtualbox.org)
+- [Vagrant](https://www.vagrantup.com)
+- [Git](https://git-scm.com)
+
+## Recommended
+
+[Github Desktop](https://desktop.github.com)
+
+It is recommended that you use Github Desktop to manage local repositories. It lets you add the submodules as local repositories, and adds your github credentials, which is accessed when you change a submodule's branch.
+
+## Installation
+
+Scripts should be ran in Bash. Git bash can be used to run all scripts.
+
+Run `install.sh` This links the post-merge hook inside ./hooks/ to ./.git/hooks.
+
+post-merge automates updating the database, plugin, and theme submodules after an update.
 
 # Usage
-Run start.sh to start and/or update the server.
 
-Run ssh.sh to ssh into the server.
+**DON'T UPDATE THE ENVIRONMENT IF SUBMODULES ARE NOT USING THE MASTER BRANCH**
 
-Run stop.sh to stop and dump the server if you choose.
+## Scripts
 
-Run update_database.sh to update the database; this must be while the server is running. If the database is ahead, nothing happens. If the branch isn't on master, it will be updated along that branch.
+- Run `start.sh` to start and/or update the server.
+- Run `stop.sh` to stop. There is a choice to server.
+- Run `sass.sh` to update the css of the theme.
+- Run `ssh.sh` to ssh into the server.
+- Run `update_database.sh` to update the database; this must be while the server is running. If the database is ahead, nothing happens. If the branch isn't on master, it will be updated along that branch.
+- Run `update_themes_plugins.sh` to update all theme and plugin submodules. If the submodule is ahead, nothing happens. If the branch isn't on master, it will be updated along that branch.
+- Run `change_submodule_branch.sh` to change the branch of the database, or any theme or plugin submodule. This script uses the git credential helper. If running on windows and using Github Desktop credentials will be automated. OSX and Linux users will need to manage adding their credentials themselves, which can be read about [here](https://help.github.com/en/articles/caching-your-github-password-in-git)
+
+On a merge (after a pull) if the database is behind its branch it will be updated.
+
+# Submodules
+
+- [Database](https://github.com/Xett/Wordpress-Database-Template)
+- [Theme](https://github.com/Xett/Wordpress-Theme-Template)
+
+New features should be worked on in a dedicated branch, so when it is complete it can be merged back into the master, as the staging server automatically updated along the master branch of each submodule. DON'T UPDATE THE ENVIRONMENT UNTIL THE BRANCH HAS BEEN MERGED WITH THE MASTER BRANCH.
 
 # How automation is implemented
-The post-merge git hook shell script is ran after a pull is merged to the local repository. This shell script checks the branch, the number of commits ahead and the number of commits behind of the local database repository. If it is in the master branch and behind, it updates. If it is not in the master branch and is behind, it updates.
-
-When start.sh is ran, it updates the database.
-
-Plugins are handled by WP-Pusher, and aren't linked as submodules. If the theme or plugin repositories are updated while the server is running, WP-Pusher will updated the theme or plugin.
+The post-merge git hook shell script is ran after a pull is merged to the local repository. This shell script checks the branch and the number of commits behind. If it is behind, it updates.
 
 # Server Account Information
 
@@ -36,3 +61,7 @@ Database - scotchbox
 Username - WebAdmin
 
 Password - gG5XCvUSL4keOwamsEz
+
+# Servers
+
+Local Development Server http://192.168.33.10
