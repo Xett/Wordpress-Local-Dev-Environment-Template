@@ -1,3 +1,8 @@
 [submodule "database/Wordpress-Database-Template"]
 	path = database/Wordpress-Database-Template
 	url = https://github.com/Xett/Wordpress-Database-Template
+	branch = master
+[submodule "www/public/wp-content/themes/Wordpress-Theme-Template"]
+	path = www/public/wp-content/themes/Wordpress-Theme-Template
+	url = https://github.com/Xett/Wordpress-Theme-Template
+	branch = master
