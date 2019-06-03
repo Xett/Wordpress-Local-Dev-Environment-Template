@@ -25,9 +25,9 @@ MYSQL_DATABASE_NAME="scotchbox"
 MYSQL_USER="WebAdmin"
 MYSQL_PASSWORD="gG5XCvUSL4keOwamsEz"
 MYSQL_DUMP="/home/vagrant/database/mysql.sql"
-MYSQL_CREATE_USER=$PROJECT_DIRECTORY"/database/database-cp3402-2019-team25/create_user.sql"
+MYSQL_CREATE_USER=$PROJECT_DIRECTORY"/database/Wordpress-Database-Template/create_user.sql"
 MYSQL_SSH_CREATE_USER="/home/vagrant/database/create_user.sql"
-DATABASE_DIRECTORY=$PROJECT_DIRECTORY"/database/database-cp3402-2019-team25"
+DATABASE_DIRECTORY=$PROJECT_DIRECTORY"/database/Wordpress-Database-Template"
 THEMES="$PROJECT_DIRECTORY/www/public/wp-content/themes/"
 PLUGINS="$PROJECT_DIRECTORY/www/public/wp-content/plugins/"
 set_project()
@@ -160,8 +160,8 @@ install()
       cp -l $PROJECT_DIRECTORY"/www/public/wp-content/themes" $PROJECT_DIRECTORY"/themes"
       cp -l $PROJECT_DIRECTORY"/www/public/wp-content/plugins" $PROJECT_DIRECTORY"/plugins"
    fi
-   change_submodule_branch "database/database-cp3402-2019-team25" "master"
-   change_submodule_branch "www/public/wp-content/themes/theme-cp3402-2019-team25" "master"
+   change_submodule_branch "database/Wordpress-Database-Template" "master"
+   change_submodule_branch "www/public/wp-content/themes/Wordpress-Theme-Template" "master"
 }
 start()
 {
@@ -204,8 +204,8 @@ ssh()
 }
 sass()
 {
-  $PROJECT_DIRECTORY"/dart-sass/sass.bat" $PROJECT_DIRECTORY"/www/public/wp-content/themes/theme-cp3402-2019-team25/sass/theme.scss" $PROJECT_DIRECTORY"/www/public/wp-content/themes/theme-cp3402-2019-team25/css/theme.css"
-  $PROJECT_DIRECTORY"/dart-sass/sass.bat" $PROJECT_DIRECTORY"/www/public/wp-content/themes/theme-cp3402-2019-team25/sass/theme.scss" $PROJECT_DIRECTORY"/www/public/wp-content/themes/theme-cp3402-2019-team25/css/theme.min.css" "--style=compressed"
+  $PROJECT_DIRECTORY"/dart-sass/sass.bat" $PROJECT_DIRECTORY"/www/public/wp-content/themes/Wordpress-Theme-Template/sass/theme.scss" $PROJECT_DIRECTORY"/www/public/wp-content/themes/Wordpress-Theme-Template/css/theme.css"
+  $PROJECT_DIRECTORY"/dart-sass/sass.bat" $PROJECT_DIRECTORY"/www/public/wp-content/themes/Wordpress-Theme-Template/sass/theme.scss" $PROJECT_DIRECTORY"/www/public/wp-content/themes/Wordpress-Theme-Template/css/theme.min.css" "--style=compressed"
 }
 if [[ "$1" == "install" ]]
 then
